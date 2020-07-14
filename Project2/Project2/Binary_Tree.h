@@ -133,13 +133,6 @@ private:
 };  // End Binary_Tree
 
 
-/*template<typename Item_Type>
-bool Binary_Tree<Item_Type>::isBinarySearch(){
-	bool result=true;
-	isBinarySearch(this->root,result);
-	return result;
-}*/
-
 template<typename Item_Type>
 void Binary_Tree<Item_Type>::setRoot(BTNode<Item_Type>* new_root){
 
