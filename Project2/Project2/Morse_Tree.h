@@ -19,11 +19,12 @@ struct Morse_Letter
 {
 	std::string letter;
 	std::string code;
+	
 	// Strategic int representation of morse code for inorder comparisons
 	int code_value = HEIGHT_CODE_VALUE;
 
 	// Constructor
-	Morse_Letter(std::string letter, std::string code) {
+	Morse_Letter(std::string letter, std::string code/*, int value*/) {
 		this->letter = letter;
 		this->code = code;
 		// Negative means left hand side of tree, otherwise positive
