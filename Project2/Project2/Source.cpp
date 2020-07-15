@@ -11,23 +11,8 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 
 
-=======
-int get_val(string code) {
-	string result_str = "";
-	int result = 0;
-	for (int i = 0; i < code.size(); ++i) {
-		if (code[i] == '.') result_str += '1';
-		else if (code[i] == '_') result_str += '2';
-		else break;
-	}
-	stringstream res_stream(result_str);
-	res_stream >> result;
-	return result;
-}
->>>>>>> ea741d83787f70d0189ebed67428504d70a814d5
 
 int main() {
 
@@ -62,11 +47,7 @@ int main() {
 	}
 	
 
-<<<<<<< HEAD
 	//Test vector, we will need to programagically create something similar
-=======
-	// Test vector, we will need to programagically create something similar
->>>>>>> ea741d83787f70d0189ebed67428504d70a814d5
 	vector<Morse_Letter> morse_letters = { 
 		{"a", "._"},
 		{"b", "_..."},
@@ -94,21 +75,11 @@ int main() {
 		{"x", "_.._"},
 		{"y", "_.__"},
 		{"z", "__.."}
-<<<<<<< HEAD
 	};
 	
 
 	Morse_Tree morse_tree(morse_letters);*/
 	cin.get();
-=======
-	}*/;
-	
-	//Morse_Tree morse_tree(morse_letters);
-	input_file.close();
-
-	cin.get();
-
->>>>>>> ea741d83787f70d0189ebed67428504d70a814d5
 	return 0;
 }
 
