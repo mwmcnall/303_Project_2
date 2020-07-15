@@ -36,7 +36,7 @@ struct Morse_Letter
 				// '.' represents left node so subtract counter
 				if (l == '.')
 					code_value -= counter;
-				// '-' represents right node so add counter
+				// '_' represents right node so add counter
 				else
 					code_value += counter;
 				counter /= 10;

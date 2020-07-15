@@ -10,9 +10,6 @@
 
 using namespace std;
 
-
-
-
 int get_val(string code) {
 	string result_str = "";
 	int result = 0;
@@ -25,8 +22,6 @@ int get_val(string code) {
 	res_stream >> result;
 	return result;
 }
-
-
 
 int main() {
 
@@ -60,41 +55,43 @@ int main() {
 		cout << temp_char << ' ' << temp_int << endl ;
 		
 	}
-
+	
 
 	// Test vector, we will need to programagically create something similar
 	vector<Morse_Letter> morse_letters = { 
-		{"a", ".-"},
-		{"b", "-..."},
-		{"c", "-.-."},
-		{"d", "-.."},
+		{"a", "._"},
+		{"b", "_..."},
+		{"c", "_._."},
+		{"d", "_.."},
 		{"e", "."},
-		{"f", "..-."},
-		{"g", "--."},
+		{"f", ".._."},
+		{"g", "__."},
 		{"h", "...."},
 		{"i", ".."},
-		{"j", ".---"},
-		{"k", "-.-"},
-		{"l", ".-.."},
-		{"m", "--"},
-		{"n", "-."},
-		{"o", "---"},
-		{"p", ".--."},
-		{"q", "--.-"},
-		{"r", ".-."},
+		{"j", ".___"},
+		{"k", "_._"},
+		{"l", "._.."},
+		{"m", "__"},
+		{"n", "_."},
+		{"o", "___"},
+		{"p", ".__."},
+		{"q", "__._"},
+		{"r", "._."},
 		{"s", "..."},
-		{"t", "-"},
-		{"u", "..-"},
-		{"v", "...-"},
-		{"w", ".--"},
-		{"x", "-..-"},
-		{"y", "-.--"},
-		{"z", "--.."}
+		{"t", "_"},
+		{"u", ".._"},
+		{"v", "..._"},
+		{"w", ".__"},
+		{"x", "_.._"},
+		{"y", "_.__"},
+		{"z", "__.."}
 	}*/;
 	
-
 	//Morse_Tree morse_tree(morse_letters);
 	input_file.close();
+
+	cin.get();
+
 	return 0;
 }
 

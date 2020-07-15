@@ -6,7 +6,7 @@ Morse_Tree::Morse_Tree(std::vector<Morse_Letter> morse_vec) {
 	// Sorts based on code_value, which represents an inorder sort
 	std::sort(morse_vec.begin(), morse_vec.end());
 
-	// Splits vector into two halves, ones whose code start with a - and ones with a .
+	// Splits vector into two halves, ones whose code start with a _ and ones with a .
 	std::size_t const half_size = morse_vec.size() / 2;
 	std::vector<Morse_Letter> dash_letters(morse_vec.begin(), morse_vec.begin() + half_size);
 	std::vector<Morse_Letter> dot_letters(morse_vec.begin() + half_size, morse_vec.end());
