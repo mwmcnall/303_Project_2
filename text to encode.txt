@@ -1,4 +1,0 @@
-abcdef
-ghijkl
-mnopqrs
-tuvwxyz
