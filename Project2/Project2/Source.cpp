@@ -28,14 +28,13 @@ int main() {
 	encode_string("abcdef\nghijkl\nmnopqrs\ntuvwxyz", letters_map_enc);
 	cout << endl;
 	decode_string("_.. ._. .. _. _._  __ ___ ._. .  ___ ..._ ._ ._.. _ .. _. .\n_... .. _ _._. ....", letters_map_dec);
-	cout << endl;
+	cout << "encoded from file below:" << endl << endl;
 	encode_from_file("text to encode.txt", letters_map_enc);
 	cout << endl;
 	decode_from_file("text to decode.txt", letters_map_dec);
 	*/
+	
 	Test_All(letters_map_dec, letters_map_enc);
-	
-	
 
 	//Morse_Tree x(morse_vec);
 

@@ -83,7 +83,7 @@ void encode_from_file(string file_name, map<string, string> letters_map_enc) {  
 
 		else if (temp_char == ' ') enc_text.append(" ");
 		else {
-			string temp_string(1, temp_char);
+			string temp_string(1, tolower(temp_char));
 			enc_text.append(letters_map_enc[temp_string]);
 			enc_text.append(" ");
 		}
@@ -149,13 +149,14 @@ void encode_string(string dec_text, map<string, string> letters_map_enc) {  // p
 
 		else if (temp_char == ' ') enc_text.append(" ");
 		else {
-			string temp_string(1, temp_char);
+			string temp_string(1, tolower(temp_char));
 			enc_text.append(letters_map_enc[temp_string]);
 			enc_text.append(" ");
 		}
 	}
 	cout << enc_text << endl << endl;
 }
+
 
 
 void decode_string(string enc_text, map<string, string> letters_map_dec) {  // prints a decoded message from an input string
@@ -191,4 +192,59 @@ void decode_string(string enc_text, map<string, string> letters_map_dec) {  // p
 	dec_text.append(letters_map_dec[temp_code]);
 	cout << dec_text << endl << endl;
 }
+
+
+string encode_string_short(string dec_text, map<string, string> letters_map_enc) 
+{	// returns encoded string, does not print by itself
+	// useful for debugging
+	string enc_text = "", temp = "";
+	for (int i = 0; i < dec_text.size(); ++i) {
+		char temp_char = dec_text[i];
+		if (temp_char == '\n') {
+			enc_text.append("\n");
+		}
+		else if (temp_char == ' ') enc_text.append(" ");
+		else {
+			string temp_string(1, tolower(temp_char));
+			enc_text.append(letters_map_enc[temp_string]);
+			enc_text.append(" ");
+		}
+	}
+	return enc_text;
+}
+
+string decode_string_short(string enc_text, map<string, string> letters_map_dec) 
+{	// returns decoded string, does not print by itself
+	// useful for debugging
+	string dec_text = "", temp = "", temp_code = "";
+	for (int i = 0; i < enc_text.size(); ++i) 
+	{
+		char temp_char = enc_text[i];
+		if (temp_char == '\n') 
+		{
+			dec_text.append(letters_map_dec[temp_code]);
+			dec_text.append("\n");
+			temp_code = "";
+		}
+
+		else if (temp_char == ' ') {
+			if (enc_text[i + 1] == ' ') {
+				dec_text.append(letters_map_dec[temp_code]);
+				dec_text.append(" ");
+			}
+			else {
+				dec_text.append(letters_map_dec[temp_code]);
+			}
+			temp_code = "";
+		}
+
+		else {
+			string temp_string(1, temp_char);
+			temp_code.append(temp_string);
+		}
+	}
+	dec_text.append(letters_map_dec[temp_code]);
+	return dec_text;
+}
+
 #endif
