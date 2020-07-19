@@ -148,6 +148,7 @@
     <ClInclude Include="Functions.h" />
     <ClInclude Include="String_Tokenizer.h" />
     <ClInclude Include="Syntax_Error.h" />
+    <ClInclude Include="Test_Cases.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

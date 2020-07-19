@@ -1,4 +1,6 @@
-#pragma once
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
 #include "Binary_Search_Tree.h"
 #include "Binary_Tree.h"
 #include<iostream>
@@ -189,3 +191,4 @@ void decode_string(string enc_text, map<string, string> letters_map_dec) {  // p
 	dec_text.append(letters_map_dec[temp_code]);
 	cout << dec_text << endl << endl;
 }
+#endif

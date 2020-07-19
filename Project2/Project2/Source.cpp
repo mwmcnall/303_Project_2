@@ -1,13 +1,14 @@
 #include "Binary_Search_Tree.h"
 #include "Binary_Tree.h"
-#include<iostream>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <vector>
+#include <string>
 #include <fstream>
 #include "Morse_Tree.h"
 #include <algorithm>
 #include <sstream>
 #include "Functions.h"
+#include "Test_Cases.h"
 
 using namespace std;
 
@@ -31,7 +32,10 @@ int main() {
 	encode_from_file("text to encode.txt", letters_map_enc);
 	cout << endl;
 	decode_from_file("text to decode.txt", letters_map_dec);
-
+	
+	Test_All(letters_map_dec, letters_map_enc);
+	
+	
 
 	//Morse_Tree x(morse_vec);
 
