@@ -24,7 +24,7 @@ int main() {
 	/*for (vector<Morse_Letter>::iterator i = morse_vec.begin(); i != morse_vec.end(); ++i) {
 		cout << i->letter << ' ' << i->code << ' ' << letters_map_enc[i->letter] << letters_map_dec[i->code] << endl;
 	}*/
-
+	/*
 	encode_string("abcdef\nghijkl\nmnopqrs\ntuvwxyz", letters_map_enc);
 	cout << endl;
 	decode_string("_.. ._. .. _. _._  __ ___ ._. .  ___ ..._ ._ ._.. _ .. _. .\n_... .. _ _._. ....", letters_map_dec);
@@ -32,7 +32,7 @@ int main() {
 	encode_from_file("text to encode.txt", letters_map_enc);
 	cout << endl;
 	decode_from_file("text to decode.txt", letters_map_dec);
-	
+	*/
 	Test_All(letters_map_dec, letters_map_enc);
 	
 	
