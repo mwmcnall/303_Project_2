@@ -12,12 +12,17 @@
 
 using namespace std;
 
-
 int main() {
 
-	map<string, string> letters_map_enc, letters_map_dec; // maps for encoding and decoding
+	// map which stores the codes for letters
+	map<string, string> letters_map_enc; 
 	vector<Morse_Letter> morse_vec;  
-	read_file_to_vec(morse_vec, "morse.txt", letters_map_enc, letters_map_dec); // see Functions.h
+	// see Functions.h
+	read_file_to_vec(morse_vec, "morse.txt", letters_map_enc); 
+	// Build Morse_tree out of filled vector from file
+	Morse_Tree morse_tree(morse_vec, letters_map_enc);
+
+	string result = morse_tree.code_from_letter("e");
 	
 	//--------------------------------------------------------------//
 	// Input custom strings to by changing the variable below		//
@@ -26,8 +31,8 @@ int main() {
 
 	//--------------------------------------------------------------//
 	
-	Test_All(user_string, letters_map_dec, letters_map_enc);
-
+	Test_All(user_string, morse_tree);
+	
 	cin.get();
 	return 0;
 }

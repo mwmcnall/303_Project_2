@@ -6,6 +6,7 @@
 #include <string>
 #include <ostream>
 #include <math.h>
+#include <map>
 
 const int INDEX_NOT_FOUND = -1;
 const std::string EMPTY = "";
@@ -24,7 +25,7 @@ struct Morse_Letter
 	int code_value = HEIGHT_CODE_VALUE;
 
 	// Constructor
-	Morse_Letter(std::string letter, std::string code/*, int value*/) {
+	Morse_Letter(std::string letter, std::string code) {
 		this->letter = letter;
 		this->code = code;
 		// Negative means left hand side of tree, otherwise positive
@@ -69,15 +70,23 @@ class Morse_Tree :
 {
 public:
 	// Does not have empty constructor, should only be created with Morse_Letter vector
-	Morse_Tree(std::vector<Morse_Letter> morse_vec);
+	Morse_Tree(std::vector<Morse_Letter> morse_vec, std::map<std::string, std::string> letter_code_map);
+
+	// methods
+	const std::string letter_from_code(const std::string& code) const;
+	std::string code_from_letter(const std::string& letter);
 
 private:
 
+	std::map<std::string, std::string> letter_code_map;
+	// Used for building left and right side of Morse_Tree
 	Binary_Search_Tree<Morse_Letter> dash_tree;
 	Binary_Search_Tree<Morse_Letter> dot_tree;
 
-	std::vector<Morse_Letter> morse_insertion_order(std::vector<Morse_Letter> morse_vec);
+	std::string letter_from_code(BTNode<Morse_Letter>* local_root,
+		const Morse_Letter& target, std::string partial_code) const;
 
+	std::vector<Morse_Letter> morse_insertion_order(std::vector<Morse_Letter> morse_vec);
 };
 
 #endif

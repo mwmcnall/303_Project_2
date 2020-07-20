@@ -1,7 +1,10 @@
 #include "Morse_Tree.h"
 
 // Constructor
-Morse_Tree::Morse_Tree(std::vector<Morse_Letter> morse_vec) {
+Morse_Tree::Morse_Tree(std::vector<Morse_Letter> morse_vec, std::map<std::string, std::string> letter_code_map) {
+
+	this->letter_code_map = letter_code_map;
+
 	// Sorts vector based on struct comparison, necessary before split
 	// Sorts based on code_value, which represents an inorder sort
 	std::sort(morse_vec.begin(), morse_vec.end());
@@ -56,4 +59,32 @@ std::vector<Morse_Letter> Morse_Tree::morse_insertion_order(std::vector<Morse_Le
 	combo_vec.insert(combo_vec.end(), morse_vec.begin(), morse_vec.end());
 
 	return combo_vec;
+}
+
+// Wrapper function to return a letter from a given code
+const std::string Morse_Tree::letter_from_code(const std::string& code) const {
+	// '.' means left tree
+	if (code.at(0) == '.')
+		return letter_from_code(this->root->left, Morse_Letter(" ", code), code.substr(1));
+	else
+		return letter_from_code(this->root->right, Morse_Letter(" ", code), code.substr(1));
+}
+
+// Recursive function to return a letter from a given code
+// partial_code moves forward one character each recursive call, used to search left or right
+std::string Morse_Tree::letter_from_code(BTNode<Morse_Letter>* local_root,
+	const Morse_Letter& target, std::string partial_code) const {
+	if (local_root == NULL)
+		return "";
+	if (local_root->data.code == target.code)
+		return local_root->data.letter;
+	if (partial_code.at(0) == '.')
+		return letter_from_code(local_root->left, target, partial_code.substr(1));
+	else
+		return letter_from_code(local_root->right, target, partial_code.substr(1));
+}
+
+// Returns code for a given letter, public call for private map variable
+std::string Morse_Tree::code_from_letter(const std::string& letter) {
+	return this->letter_code_map[letter];
 }
