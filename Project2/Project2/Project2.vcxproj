@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTreeApp.cpp" />
+    <ClCompile Include="Morse_Tree.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +146,7 @@
     <ClInclude Include="Binary_Tree.h" />
     <ClInclude Include="BTNode.h" />
     <ClInclude Include="Functions.h" />
-    <ClInclude Include="String_Tokenizer.h" />
+    <ClInclude Include="Morse_Tree.h" />
     <ClInclude Include="Syntax_Error.h" />
     <ClInclude Include="Test_Cases.h" />
   </ItemGroup>
