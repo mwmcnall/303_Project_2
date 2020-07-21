@@ -25,7 +25,7 @@ int main() {
 	string result = morse_tree.code_from_letter("e");
 	
 	//--------------------------------------------------------------//
-	// Input custom strings to by changing the variable below		//
+	// Input custom strings by changing the variable below		//
 	
 	string user_string = "I ate a big red candle";
 
